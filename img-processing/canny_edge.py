@@ -17,7 +17,7 @@ def getHeight(imageArray):
     return imageArray.shape[0]
 
 def getGrayScaledPixel(rgbPixel):
-    return 0.2126 * rgbPixel[0] + 0.7152 * rgbPixel[1] + 0.0722 * rgbPixel[2]
+    return 0.299 * rgbPixel[0] + 0.587 * rgbPixel[1] + 0.114 * rgbPixel[2]
 
 def convertToGrayScale(imageArray):
     height, width = imageArray.shape[0], imageArray.shape[1]
@@ -172,5 +172,5 @@ def cannyEdgeDetector(src, sigma, lowThreshold, highThreshold):
     return edges
 
 # Example usage:
-canny_edge = cannyEdgeDetector('placeholder.png', sigma=1, lowThreshold=20, highThreshold=40)
+canny_edge = cannyEdgeDetector('img-processing/placeholder.webp', sigma=1, lowThreshold=20, highThreshold=40)
 saveImage(canny_edge, "canny_edge.png")
